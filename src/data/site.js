@@ -36,4 +36,8 @@ export const siteData = {
     evening: "8:00 PM"
   },
   phone: "", // To be updated by client
+  credit: {
+    name: "Maithri",
+    url: "https://maithri-portfolio-amber.vercel.app/", // Portfolio link
+  },
 };

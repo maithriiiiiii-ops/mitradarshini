@@ -93,6 +93,21 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-widest text-[#FDFBF7]/40">
           <p>&copy; {currentYear} {siteData.name}. All rights reserved.</p>
           <p>Made with love. Served with joy.</p>
+          <p>
+            Built by{" "}
+            {siteData.credit.url ? (
+              <a
+                href={siteData.credit.url}
+                target="_blank"
+                rel="noopener"
+                className="text-[#FDFBF7]/60 underline decoration-[#8B5A2B]/60 underline-offset-4 hover:text-brand-gold-warm hover:decoration-brand-gold-warm transition-colors"
+              >
+                {siteData.credit.name}
+              </a>
+            ) : (
+              <span className="text-[#FDFBF7]/60">{siteData.credit.name}</span>
+            )}
+          </p>
         </div>
         
       </div>
