@@ -1,85 +1,161 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { siteData } from "@/data/site";
+import { menuData } from "@/data/menu";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
+const title = `${siteData.name} | Pure Vegetarian Restaurant in Udupi`;
+const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteData.mapQuery)}`;
+
 export const metadata = {
-  metadataBase: new URL("https://mitradarshini.com"),
-  title: `${siteData.name} | ${siteData.shortDescription} Restaurant in Udupi`,
-  description: siteData.description,
+  metadataBase: new URL(siteData.url),
+  title: {
+    default: title,
+    template: `%s | ${siteData.name}`,
+  },
+  description: siteData.seoDescription,
+  applicationName: siteData.name,
+  keywords: [
+    "Hotel Mitra Darshini",
+    "Mitra Darshini Udupi",
+    "pure veg restaurant Udupi",
+    "vegetarian restaurant in Udupi",
+    "South Indian restaurant Udupi",
+    "best masala dosa Udupi",
+    "breakfast in Udupi",
+    "Udupi meals",
+    "restaurant near Rajangana Parking",
+    "restaurant near Krishna Temple Udupi",
+    "Maruthi Veethika Udupi",
+  ],
+  authors: [{ name: siteData.name, url: siteData.url }],
+  creator: siteData.name,
+  publisher: siteData.name,
+  category: "restaurant",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: `${siteData.name} | ${siteData.shortDescription}`,
-    description: siteData.description,
-    url: "https://mitradarshini.com",
+    title,
+    description: siteData.seoDescription,
+    url: "/",
     siteName: siteData.name,
-    images: [
-      {
-        url: "/hero.jpeg",
-        width: 1200,
-        height: 630,
-        alt: siteData.name,
-      },
-    ],
     locale: "en_IN",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description: siteData.seoDescription,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  formatDetection: {
+    telephone: true,
+    address: true,
+  },
+  other: {
+    "geo.region": "IN-KA",
+    "geo.placename": siteData.locality,
+  },
+};
+
+export const viewport = {
+  themeColor: "#2B170E",
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Restaurant",
+      "@id": `${siteData.url}/#restaurant`,
+      name: siteData.name,
+      alternateName: ["Mitra Darshini", siteData.kannadaName],
+      description: siteData.description,
+      url: siteData.url,
+      logo: `${siteData.url}/icon-512.png`,
+      image: [
+        `${siteData.url}/opengraph-image.jpg`,
+        `${siteData.url}/front.jpeg`,
+        `${siteData.url}/exterior.jpeg`,
+        `${siteData.url}/signboard.jpeg`,
+      ],
+      ...(siteData.phone && { telephone: siteData.phone }),
+      priceRange: "₹",
+      currenciesAccepted: "INR",
+      servesCuisine: ["South Indian", "Udupi", "Vegetarian", "Karnataka"],
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: siteData.streetAddress,
+        addressLocality: siteData.locality,
+        addressRegion: siteData.region,
+        postalCode: siteData.postalCode,
+        addressCountry: "IN",
+      },
+      hasMap: mapsUrl,
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          opens: "06:00",
+          closes: "20:00",
+        },
+      ],
+      hasMenu: {
+        "@type": "Menu",
+        name: `${siteData.name} Menu`,
+        url: `${siteData.url}/#menu`,
+        inLanguage: "en",
+        hasMenuSection: menuData.map((section) => ({
+          "@type": "MenuSection",
+          name: section.category,
+          hasMenuItem: section.items.map((item) => ({
+            "@type": "MenuItem",
+            name: item.name,
+            suitableForDiet: "https://schema.org/VegetarianDiet",
+            offers: {
+              "@type": "Offer",
+              price: item.price,
+              priceCurrency: "INR",
+            },
+          })),
+        })),
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteData.url}/#website`,
+      url: siteData.url,
+      name: siteData.name,
+      inLanguage: "en-IN",
+      publisher: { "@id": `${siteData.url}/#restaurant` },
+    },
+  ],
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <head>
+    <html lang="en-IN" className="scroll-smooth">
+      <body className={`${inter.variable} antialiased flex flex-col min-h-screen bg-[#F5EBE0] text-brand-text`}>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Restaurant",
-              name: siteData.name,
-              image: "/hero.jpeg",
-              "@id": "",
-              url: "https://mitradarshini.com",
-              telephone: siteData.phone || undefined,
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "Maruthi Veethika",
-                addressLocality: "Udupi",
-                postalCode: "576101",
-                addressCountry: "IN",
-                addressRegion: "Karnataka"
-              },
-              geo: {
-                "@type": "GeoCoordinates",
-                latitude: 13.3409, // approximate lat for Udupi
-                longitude: 74.7421 // approximate lng for Udupi
-              },
-              openingHoursSpecification: [
-                {
-                  "@type": "OpeningHoursSpecification",
-                  dayOfWeek: [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday",
-                    "Sunday"
-                  ],
-                  opens: "06:00",
-                  closes: "20:00"
-                }
-              ],
-              servesCuisine: "South Indian, Pure Vegetarian, Udupi"
-            })
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
         />
-      </head>
-      <body className={`${inter.variable} antialiased flex flex-col min-h-screen bg-[#F5EBE0] text-brand-text`}>
         <Navbar />
-        <main className="flex-grow">
+        <main className="grow">
           {children}
         </main>
         <Footer />

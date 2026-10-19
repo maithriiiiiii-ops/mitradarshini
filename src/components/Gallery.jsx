@@ -4,11 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const images = [
-  { src: "/street-view.jpeg", alt: "Find Us on the Road", position: "47% center", rotate: "-rotate-6", z: "z-10" },
-  { src: "/signboard.jpeg", alt: "Shuddha Sasyahari", position: "32% center", rotate: "-rotate-2", z: "z-20", translate: "-translate-y-4" },
-  { src: "/front.jpeg", alt: "Evenings at Mitra Darshini", position: "36% center", rotate: "rotate-3", z: "z-30", translate: "-translate-y-8" },
-  { src: "/exterior.jpeg", alt: "Our Entrance", position: "85% center", rotate: "rotate-6", z: "z-40", translate: "-translate-y-4" },
-  { src: "/menu1.jpeg", alt: "Our Menu", position: "center top", rotate: "rotate-12", z: "z-10" },
+  { src: "/street-view.jpeg", caption: "Find Us on the Road", alt: "Road view of Hotel Mitra Darshini below Vishwamanya Mandira Lodge, Maruthi Veethika, Udupi", position: "47% center", rotate: "-rotate-6", z: "z-10" },
+  { src: "/signboard.jpeg", caption: "Shuddha Sasyahari", alt: "Hotel Mitra Darshini pure vegetarian signboard in Kannada and English", position: "32% center", rotate: "-rotate-2", z: "z-20", translate: "-translate-y-4" },
+  { src: "/front.jpeg", caption: "Evenings at Mitra Darshini", alt: "Hotel Mitra Darshini restaurant building in Udupi in the evening", position: "36% center", rotate: "rotate-3", z: "z-30", translate: "-translate-y-8" },
+  { src: "/exterior.jpeg", caption: "Our Entrance", alt: "Entrance of Hotel Mitra Darshini with its lit name board", position: "85% center", rotate: "rotate-6", z: "z-40", translate: "-translate-y-4" },
+  { src: "/menu1.jpeg", caption: "Our Menu", alt: "Hotel Mitra Darshini menu with tiffins, dosas, meals and beverages with prices", position: "center top", rotate: "rotate-12", z: "z-10" },
 ];
 
 // On mobile the story reads in order: arrive, step in, spot the board, find the road, see the menu
@@ -87,7 +87,7 @@ function MobileCarousel() {
                 />
               </div>
               <figcaption className="font-serif text-[#24160F] text-base text-center py-3.5 leading-tight">
-                {img.alt}
+                {img.caption}
               </figcaption>
             </figure>
           );
@@ -105,7 +105,7 @@ function MobileCarousel() {
               key={img.src}
               type="button"
               onClick={() => goTo(index)}
-              aria-label={`Show ${img.alt}`}
+              aria-label={`Show ${img.caption}`}
               aria-current={index === active}
               className="py-3"
             >
@@ -164,7 +164,7 @@ export default function Gallery() {
                 </div>
                 <div className="absolute bottom-4 left-0 w-full text-center">
                   <span className="font-serif text-[#24160F] text-sm bg-[#F5EFE6]/90 px-3 py-1 rounded-full shadow-sm whitespace-nowrap">
-                    {img.alt}
+                    {img.caption}
                   </span>
                 </div>
               </div>

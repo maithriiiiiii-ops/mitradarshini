@@ -37,42 +37,42 @@ export default function Menu() {
         animate={floatAnimation(0)}
         className="absolute -top-4 -right-10 md:top-10 md:right-10 w-32 h-32 md:w-56 md:h-56 opacity-30 pointer-events-none z-0 rotate-12"
       >
-        <Image src="/coffee-art.png" alt="Coffee Art" fill className="object-contain" />
+        <Image src="/coffee-art.png" alt="" fill className="object-contain" />
       </motion.div>
 
       <motion.div 
         animate={floatAnimation(2)}
         className="absolute top-1/4 -left-12 md:left-4 w-40 h-40 md:w-64 md:h-64 opacity-30 pointer-events-none z-0 -rotate-12"
       >
-        <Image src="/Sepia Masala Dosa Thali Illustration.png" alt="Dosa Thali Art" fill className="object-contain" />
+        <Image src="/Sepia Masala Dosa Thali Illustration.png" alt="" fill className="object-contain" />
       </motion.div>
 
       <motion.div 
         animate={floatAnimation(1)}
         className="absolute bottom-10 -right-8 md:bottom-20 md:right-8 w-32 h-32 md:w-48 md:h-48 opacity-30 pointer-events-none z-0 rotate-6"
       >
-        <Image src="/poori.png" alt="Poori Art" fill className="object-contain" />
+        <Image src="/poori.png" alt="" fill className="object-contain" />
       </motion.div>
 
       <motion.div 
         animate={floatAnimation(3)}
         className="absolute top-32 left-10 w-32 h-32 md:w-40 md:h-40 opacity-30 pointer-events-none z-0 -rotate-6 hidden md:block"
       >
-        <Image src="/pulav.png" alt="Pulav Art" fill className="object-contain" />
+        <Image src="/pulav.png" alt="" fill className="object-contain" />
       </motion.div>
 
       <motion.div 
         animate={floatAnimation(1.5)}
         className="absolute bottom-40 -left-10 md:bottom-56 md:left-12 w-28 h-28 md:w-48 md:h-48 opacity-30 pointer-events-none z-0 rotate-12 hidden md:block"
       >
-        <Image src="/badam-milk.png" alt="Badam Milk Art" fill className="object-contain" />
+        <Image src="/badam-milk.png" alt="" fill className="object-contain" />
       </motion.div>
 
       <motion.div 
         animate={floatAnimation(2.5)}
         className="absolute top-1/2 -right-16 md:right-4 w-36 h-36 md:w-52 md:h-52 opacity-30 pointer-events-none z-0 -rotate-12"
       >
-        <Image src="/sharbat.png" alt="Sharbat Art" fill className="object-contain" />
+        <Image src="/sharbat.png" alt="" fill className="object-contain" />
       </motion.div>
 
       <div className="container mx-auto px-5 lg:px-12 max-w-6xl relative z-10">

@@ -72,7 +72,7 @@ export default function Hero() {
       >
         <Image
           src="/hero.png"
-          alt="Hotel Mitra Darshini Exterior"
+          alt="Hotel Mitra Darshini pure vegetarian restaurant in Udupi, lit up at sunset"
           fill
           priority
           className="object-cover"

@@ -1,9 +1,12 @@
+import { siteData } from "@/data/site";
+
 export default function robots() {
   return {
     rules: {
-      userAgent: '*',
-      allow: '/',
+      userAgent: "*",
+      allow: "/",
     },
-    sitemap: 'https://mitradarshini.com/sitemap.xml',
-  }
+    sitemap: `${siteData.url}/sitemap.xml`,
+    host: siteData.url,
+  };
 }
