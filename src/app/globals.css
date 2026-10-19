@@ -18,6 +18,11 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* Keep section tops clear of the fixed navbar when jumping to them */
+  section[id] {
+    scroll-margin-top: 4.5rem;
+  }
   
   body {
     background-color: var(--color-brand-bg);

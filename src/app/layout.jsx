@@ -92,9 +92,9 @@ const jsonLd = {
       logo: `${siteData.url}/icon-512.png`,
       image: [
         `${siteData.url}/opengraph-image.jpg`,
-        `${siteData.url}/front.jpeg`,
-        `${siteData.url}/exterior.jpeg`,
-        `${siteData.url}/signboard.jpeg`,
+        `${siteData.url}/front.webp`,
+        `${siteData.url}/exterior.webp`,
+        `${siteData.url}/signboard.webp`,
       ],
       ...(siteData.phone && { telephone: siteData.phone }),
       priceRange: "₹",

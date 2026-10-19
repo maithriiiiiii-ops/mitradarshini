@@ -19,7 +19,7 @@ export default function CTA() {
 
   return (
     // section is relative, taking up 70vh (viewport height) on desktop
-    <section className="relative w-full h-auto lg:h-[70vh] min-h-[600px] flex flex-col lg:flex-row items-center justify-center bg-[#FDFBF7] border-t border-[#1A0E0A]/5">
+    <section id="location" className="relative w-full h-auto lg:h-[70vh] min-h-[600px] flex flex-col lg:flex-row items-center justify-center bg-[#FDFBF7] border-t border-[#1A0E0A]/5">
       
       {/* FULL WIDTH MAP BACKGROUND */}
       <div className="absolute inset-0 w-full h-full z-0">

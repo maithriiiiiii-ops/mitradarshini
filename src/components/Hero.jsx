@@ -54,7 +54,7 @@ export default function Hero() {
           >
             {/* Restored your original logo-2.png */}
             <Image 
-              src="/logo-2.png" 
+              src="/logo-2.webp" 
               alt={`${siteData.name} Logo`}
               fill
               className="object-contain p-2 md:p-3"
@@ -71,7 +71,7 @@ export default function Hero() {
         className="w-full max-w-[95%] lg:max-w-[90%] mx-auto h-[50vh] md:h-[70vh] relative rounded-lg overflow-hidden shadow-lg z-10"
       >
         <Image
-          src="/hero.png"
+          src="/hero.webp"
           alt="Hotel Mitra Darshini pure vegetarian restaurant in Udupi, lit up at sunset"
           fill
           priority

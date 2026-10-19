@@ -9,11 +9,11 @@ export default function sitemap() {
       priority: 1,
       images: [
         "/opengraph-image.jpg",
-        "/front.jpeg",
-        "/exterior.jpeg",
-        "/signboard.jpeg",
-        "/street-view.jpeg",
-        "/menu1.jpeg",
+        "/front.webp",
+        "/exterior.webp",
+        "/signboard.webp",
+        "/street-view.webp",
+        "/menu1.webp",
       ].map((path) => `${siteData.url}${path}`),
     },
   ];

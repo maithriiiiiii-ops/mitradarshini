@@ -25,7 +25,7 @@ export default function Navbar() {
     { name: "Our Story", href: "#about" },
     { name: "Menu", href: "#menu" },
     { name: "Gallery", href: "#gallery" },
-    { name: "Location", href: "#location" }, // Assuming your CTA has id="location"
+    { name: "Location", href: "#location" },
   ];
 
   return (
@@ -42,7 +42,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="#home" className="flex items-center z-50 group">
             <Image 
-              src="/logo.png" // Ensure this matches your actual transparent logo file
+              src="/logo.webp" // Ensure this matches your actual transparent logo file
               alt={`${siteData.name} Logo`}
               width={120}
               height={60}

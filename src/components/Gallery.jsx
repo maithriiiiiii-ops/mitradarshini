@@ -4,11 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const images = [
-  { src: "/street-view.jpeg", caption: "Find Us on the Road", alt: "Road view of Hotel Mitra Darshini below Vishwamanya Mandira Lodge, Maruthi Veethika, Udupi", position: "47% center", rotate: "-rotate-6", z: "z-10" },
-  { src: "/signboard.jpeg", caption: "Shuddha Sasyahari", alt: "Hotel Mitra Darshini pure vegetarian signboard in Kannada and English", position: "32% center", rotate: "-rotate-2", z: "z-20", translate: "-translate-y-4" },
-  { src: "/front.jpeg", caption: "Evenings at Mitra Darshini", alt: "Hotel Mitra Darshini restaurant building in Udupi in the evening", position: "36% center", rotate: "rotate-3", z: "z-30", translate: "-translate-y-8" },
-  { src: "/exterior.jpeg", caption: "Our Entrance", alt: "Entrance of Hotel Mitra Darshini with its lit name board", position: "85% center", rotate: "rotate-6", z: "z-40", translate: "-translate-y-4" },
-  { src: "/menu1.jpeg", caption: "Our Menu", alt: "Hotel Mitra Darshini menu with tiffins, dosas, meals and beverages with prices", position: "center top", rotate: "rotate-12", z: "z-10" },
+  { src: "/street-view.webp", caption: "Find Us on the Road", alt: "Road view of Hotel Mitra Darshini below Vishwamanya Mandira Lodge, Maruthi Veethika, Udupi", position: "47% center", rotate: "-rotate-6", z: "z-10" },
+  { src: "/signboard.webp", caption: "Shuddha Sasyahari", alt: "Hotel Mitra Darshini pure vegetarian signboard in Kannada and English", position: "32% center", rotate: "-rotate-2", z: "z-20", translate: "-translate-y-4" },
+  { src: "/front.webp", caption: "Evenings at Mitra Darshini", alt: "Hotel Mitra Darshini restaurant building in Udupi in the evening", position: "36% center", rotate: "rotate-3", z: "z-30", translate: "-translate-y-8" },
+  { src: "/exterior.webp", caption: "Our Entrance", alt: "Entrance of Hotel Mitra Darshini with its lit name board", position: "85% center", rotate: "rotate-6", z: "z-40", translate: "-translate-y-4" },
+  { src: "/menu1.webp", caption: "Our Menu", alt: "Hotel Mitra Darshini menu with tiffins, dosas, meals and beverages with prices", position: "center top", rotate: "rotate-12", z: "z-10" },
 ];
 
 // On mobile the story reads in order: arrive, step in, spot the board, find the road, see the menu
