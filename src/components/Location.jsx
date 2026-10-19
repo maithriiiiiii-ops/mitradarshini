@@ -2,7 +2,7 @@ import { siteData } from "@/data/site";
 import { MapPin, Navigation } from "lucide-react";
 
 export default function Location() {
-  const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteData.mapQuery)}`;
+  const mapUrl = siteData.mapsUrl;
 
   return (
     <section id="location" className="py-20 bg-brand-cream relative">

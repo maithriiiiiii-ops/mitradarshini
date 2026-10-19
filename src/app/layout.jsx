@@ -7,8 +7,7 @@ import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
-const title = `${siteData.name} | Pure Vegetarian Restaurant in Udupi`;
-const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteData.mapQuery)}`;
+const title = `${siteData.name} | Pure Veg near Krishna Matha, Udupi`;
 
 export const metadata = {
   metadataBase: new URL(siteData.url),
@@ -27,8 +26,10 @@ export const metadata = {
     "best masala dosa Udupi",
     "breakfast in Udupi",
     "Udupi meals",
+    "restaurant near Udupi Krishna Matha",
+    "hotel near Krishna Mutt Udupi",
+    "veg hotel near Udupi Krishna Temple",
     "restaurant near Rajangana Parking",
-    "restaurant near Krishna Temple Udupi",
     "Maruthi Veethika Udupi",
   ],
   authors: [{ name: siteData.name, url: siteData.url }],
@@ -69,6 +70,8 @@ export const metadata = {
   other: {
     "geo.region": "IN-KA",
     "geo.placename": siteData.locality,
+    "geo.position": `${siteData.geo.latitude};${siteData.geo.longitude}`,
+    ICBM: `${siteData.geo.latitude}, ${siteData.geo.longitude}`,
   },
 };
 
@@ -105,7 +108,12 @@ const jsonLd = {
         postalCode: siteData.postalCode,
         addressCountry: "IN",
       },
-      hasMap: mapsUrl,
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: siteData.geo.latitude,
+        longitude: siteData.geo.longitude,
+      },
+      hasMap: siteData.mapsUrl,
       openingHoursSpecification: [
         {
           "@type": "OpeningHoursSpecification",

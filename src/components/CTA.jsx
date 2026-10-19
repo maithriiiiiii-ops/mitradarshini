@@ -6,11 +6,11 @@ import { motion } from "framer-motion";
 
 export default function CTA() {
   // URL for the "Get Directions" button to open in Google Maps app/new tab
-  const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteData.mapQuery)}`;
+  const mapUrl = siteData.mapsUrl;
   
   // URL for the embedded iframe map
   // If siteData.mapQuery is undefined in your testing, you can hardcode the restaurant name here temporarily
-  const mapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(siteData.mapQuery || "Hotel Mitra Darshini Udupi")}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+  const mapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(siteData.mapQuery || "Hotel Mitra Darshini Udupi")}&t=&z=17&ie=UTF8&iwloc=&output=embed`;
 
   const fadeUp = {
     hidden: { opacity: 0, y: 30 },
