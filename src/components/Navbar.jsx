@@ -23,7 +23,6 @@ export default function Navbar() {
   const navLinks = [
     { name: "Home", href: "#home" },
     { name: "Our Story", href: "#about" },
-    { name: "Menu", href: "#menu" },
     { name: "Gallery", href: "#gallery" },
     { name: "Location", href: "#location" },
   ];
@@ -31,17 +30,17 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        scrolled 
-          ? "bg-[#FDFBF7]/90 backdrop-blur-md shadow-[0_4px_20px_rgba(26,14,10,0.05)] py-4" 
+        scrolled
+          ? "bg-[#FDFBF7]/90 backdrop-blur-md shadow-[0_4px_20px_rgba(26,14,10,0.05)] py-4"
           : "bg-transparent py-6"
       }`}
     >
       <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
         <div className="flex items-center justify-between">
-          
+
           {/* Logo */}
           <Link href="#home" className="flex items-center z-50 group">
-            <Image 
+            <Image
               src="/logo.webp" // Ensure this matches your actual transparent logo file
               alt={`${siteData.name} Logo`}
               width={120}
@@ -53,9 +52,9 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) => (
-              <Link 
+              <Link
                 key={link.name}
-                href={link.href} 
+                href={link.href}
                 className="text-[11px] uppercase tracking-[0.2em] font-bold text-[#1A0E0A] hover:text-[#8B5A2B] transition-colors relative group"
               >
                 {link.name}
@@ -86,16 +85,16 @@ export default function Navbar() {
       >
         <div className="flex flex-col items-center justify-center gap-8">
           {navLinks.map((link) => (
-            <Link 
+            <Link
               key={link.name}
-              href={link.href} 
-              onClick={() => setIsOpen(false)} 
+              href={link.href}
+              onClick={() => setIsOpen(false)}
               className="text-sm uppercase tracking-[0.25em] font-bold text-[#1A0E0A] hover:text-[#8B5A2B] transition-colors"
             >
               {link.name}
             </Link>
           ))}
-          
+
           {/* Small decorative element for mobile menu footer */}
           <div className="w-12 h-[1px] bg-[#8B5A2B]/30 mt-4"></div>
         </div>

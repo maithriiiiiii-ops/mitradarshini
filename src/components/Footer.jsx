@@ -5,10 +5,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+const floatAnim = (delay = 0) => ({
+  animate: { y: [0, -10, 0] },
+  transition: { duration: 9, repeat: Infinity, ease: "easeInOut", delay },
+});
+
 const footerLinks = [
   { name: "Home", href: "#home" },
   { name: "Our Story", href: "#about" },
-  { name: "Menu", href: "#menu" },
   { name: "Gallery", href: "#gallery" },
   { name: "Location", href: "#location" },
 ];
@@ -26,6 +30,14 @@ export default function Footer() {
       
       {/* Decorative top border line */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gradient-to-r from-transparent via-[#8B5A2B]/30 to-transparent"></div>
+
+      {/* Floating line-art decorations */}
+      <motion.div {...floatAnim(0)} className="absolute bottom-12 left-4 md:left-10 w-28 h-28 md:w-40 md:h-40 opacity-[0.07] pointer-events-none -rotate-12">
+        <Image src="/poori.webp" alt="" fill className="object-contain" />
+      </motion.div>
+      <motion.div {...floatAnim(3)} className="absolute bottom-10 right-4 md:right-10 w-28 h-28 md:w-40 md:h-40 opacity-[0.07] pointer-events-none rotate-12">
+        <Image src="/badam-milk.webp" alt="" fill className="object-contain" />
+      </motion.div>
 
       <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
         

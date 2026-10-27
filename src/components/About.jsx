@@ -1,6 +1,7 @@
 'use client';
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
@@ -19,10 +20,24 @@ export default function About() {
   };
 
   return (
-    // Significantly reduced vertical padding to tighten the section
     <section id="about" className="py-16 lg:py-20 bg-[#FDFBF7] relative overflow-hidden">
-      
-      {/* Reduced max-width to bring the left and right columns closer together */}
+
+      {/* Decorative floating line-arts */}
+      <motion.div
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+        className="absolute -bottom-4 -left-8 md:bottom-0 md:left-2 w-36 h-36 md:w-52 md:h-52 opacity-10 pointer-events-none z-0 -rotate-12"
+      >
+        <Image src="/pulav.webp" alt="" fill className="object-contain" />
+      </motion.div>
+      <motion.div
+        animate={{ y: [0, -14, 0] }}
+        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        className="absolute top-4 -right-8 md:top-8 md:right-0 w-32 h-32 md:w-48 md:h-48 opacity-10 pointer-events-none z-0 rotate-12"
+      >
+        <Image src="/badam-milk.webp" alt="" fill className="object-contain" />
+      </motion.div>
+
       <div className="container mx-auto px-6 lg:px-12 max-w-6xl relative z-10">
         
         {/* Reduced gap between the text and the video */}
@@ -53,11 +68,11 @@ export default function About() {
             </motion.p>
             
             <motion.div variants={fadeUp}>
-              <Link 
-                href="#menu" 
+              <Link
+                href="#gallery"
                 className="group inline-flex items-center gap-4 px-8 py-3.5 bg-[#1A0E0A] text-[#FDFBF7] font-semibold rounded-full hover:bg-[#8B5A2B] transition-all duration-300 shadow-md hover:shadow-lg"
               >
-                Discover Our Menu
+                See Our Gallery
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </motion.div>

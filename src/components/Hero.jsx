@@ -5,6 +5,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+const float = (delay = 0) => ({
+  animate: { y: [0, -12, 0] },
+  transition: { duration: 7, repeat: Infinity, ease: "easeInOut", delay },
+});
+
 export default function Hero() {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -26,7 +31,18 @@ export default function Hero() {
   return (
     // Reduced pt-24 pb-20 to pt-20 pb-12 to tighten vertical space
     <section id="home" className="relative bg-[#F5EFE6] pt-20 pb-12 overflow-hidden flex flex-col items-center">
-      
+
+      {/* Decorative floating line-arts */}
+      <motion.div {...float(0)} className="absolute top-16 -left-6 md:left-4 lg:left-10 w-28 h-28 md:w-40 md:h-40 opacity-20 pointer-events-none z-10 -rotate-12">
+        <Image src="/dosa-thali.webp" alt="" fill className="object-contain" />
+      </motion.div>
+      <motion.div {...float(2.5)} className="absolute top-10 -right-4 md:right-6 lg:right-14 w-24 h-24 md:w-36 md:h-36 opacity-15 pointer-events-none z-10 rotate-12">
+        <Image src="/sharbat.webp" alt="" fill className="object-contain" />
+      </motion.div>
+      <motion.div {...float(1.2)} className="absolute bottom-6 -right-6 md:right-4 lg:right-8 w-32 h-32 md:w-44 md:h-44 opacity-20 pointer-events-none z-10 rotate-6">
+        <Image src="/coffee-art.webp" alt="" fill className="object-contain" />
+      </motion.div>
+
       {/* Top Text Content */}
       <motion.div 
         variants={containerVariants}
@@ -45,7 +61,7 @@ export default function Hero() {
       {/* Overlapping Circular Button */}
       {/* Adjusted negative margin to keep the overlap correct with the new spacing */}
       <div className="relative z-30 -mb-12 md:-mb-16 flex justify-center w-full pointer-events-none">
-        <Link href="#menu" className="pointer-events-auto group">
+        <Link href="#about" className="pointer-events-auto group">
           <motion.div 
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
